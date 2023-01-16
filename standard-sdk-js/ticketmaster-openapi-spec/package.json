@@ -34,6 +34,6 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@comake/standard-sdk-js": "^1.0.1"
+    "@comake/standard-sdk-js": "^1.0.3"
   }
 }
