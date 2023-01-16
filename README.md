@@ -1,6 +1,6 @@
 # Welcome to SKL Examples!
 
-This repository contains examples of using Standard Knowledge Language via Standard SDK JS and SKQL JS Engine.
+This repository contains examples of using Standard Knowledge Language via [Standard SDK JS](https://github.com/comake/standard-sdk-js) and [SKQL JS Engine](https://github.com/comake/skql-js-engine).
 
 ## Featured Examples
 
