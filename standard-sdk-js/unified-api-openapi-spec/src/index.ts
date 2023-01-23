@@ -1,16 +1,12 @@
-import { promises as fs } from 'fs';
-import type { OpenApi } from '@comake/standard-sdk-js';
 import { StandardSDK } from '@comake/standard-sdk-js';
+import ticketmasterOpenApiSpec from './TicketmasterOpenapi';
 
 async function run(): Promise<void> {
-  const ticketmasterOpenApiSpecFile = await fs.readFile('./assets/ticketmaster-openapi.json', { encoding: 'utf8' });
-  const ticketmasterOpenApiSpec = JSON.parse(ticketmasterOpenApiSpecFile);
-
   const standardSdk = StandardSDK.build({
     apiSpecs: {
       ticketmaster: {
         type: 'openapi',
-        value: ticketmasterOpenApiSpec as OpenApi,
+        value: ticketmasterOpenApiSpec,
       },
     },
   });

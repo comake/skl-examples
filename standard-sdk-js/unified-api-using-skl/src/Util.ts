@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import type { Entity } from '@comake/standard-sdk-js';
 import jsonld from 'jsonld';
 
-export async function frameAndCombineSchemas(
+export async function combineSchemas(
   filePaths: string[],
   env: Record<string, string> = {},
 ): Promise<Entity[]> {
@@ -28,3 +28,10 @@ export async function frameAndCombineSchemas(
   );
   return framedSchema['@graph'] as Entity[];
 }
+
+export const env = {
+  TICKETMASTER_APIKEY: process.env.TICKETMASTER_APIKEY!,
+  SEATGEEK_APIKEY: process.env.TICKETMASTER_APIKEY!,
+  STUBHUB_USERNAME: process.env.STUBHUB_USERNAME!,
+  STUBHUB_PASSWORD: process.env.STUBHUB_PASSWORD!,
+};

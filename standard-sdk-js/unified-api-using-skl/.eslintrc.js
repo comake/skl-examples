@@ -20,10 +20,6 @@ module.exports = {
     'plugin:import/typescript',
   ],
   rules: {
-    // Overrides for this example script
-    'no-process-env': 'off',
-    'no-console': 'off',
-    '@typescript-eslint/no-floating-promises': 'off',
     // Below taken from https://github.com/CommunitySolidServer/CommunitySolidServer/blob/main/.eslintrc.js
     // There are valid typing reasons to have one or the other
     '@typescript-eslint/consistent-type-definitions': 'off',
@@ -145,6 +141,12 @@ module.exports = {
         ]
       }
     ],
+    // Overrides for this example script
+    'no-process-env': 'off',
+    'no-console': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/naming-convention': 'off',
   },
   overrides: [
     {
