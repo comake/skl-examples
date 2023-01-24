@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import type { Entity } from '@comake/standard-sdk-js';
 import jsonld from 'jsonld';
 
-export async function frameAndCombineSchemas(
+export async function combineSchemas(
   filePaths: string[],
   env: Record<string, string> = {},
 ): Promise<Entity[]> {
