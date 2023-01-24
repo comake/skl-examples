@@ -5,10 +5,10 @@ import { combineSchemas } from './Util';
 dotenv.config();
 
 const schemaFiles = [
-  './assets/entities.json',
-  './assets/mappings.json',
-  './assets/nouns.json',
-  './assets/verbs.json'
+  './skl-schemas/entities.json',
+  './skl-schemas/mappings.json',
+  './skl-schemas/nouns.json',
+  './skl-schemas/verbs.json'
 ];
 const env = {
   TICKETMASTER_APIKEY: process.env.TICKETMASTER_APIKEY!,

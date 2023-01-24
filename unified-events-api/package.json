@@ -16,7 +16,7 @@
   "license": "MIT",
   "files": [
     "dist",
-    "assets"
+    "skl-schemas"
   ],
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
