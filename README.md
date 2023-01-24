@@ -6,8 +6,10 @@ This repository contains examples of using Standard Knowledge Language via [Stan
 
 - Standard SDK
 
-  - [Send requests to an API using SKL](https://github.com/comake/skl-examples/blob/main/standard-sdk-js/ticketmaster-using-skl)
+  - [Integrating events from ticketing systems](https://github.com/comake/skl-examples/blob/main/events-unified-api)
+    
+    - [Send requests to APIs using existing SDKs](https://github.com/comake/skl-examples/blob/main/events-unified-api/src/UsingExistingSdks.ts)
 
-  - [Send requests to an API using OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/standard-sdk-js/ticketmaster-openapi-spec)
+    - [Send requests to APIs using OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/events-unified-api/src/UsingOpenApiSpecs.ts)
 
-- SKQL Engine - examples coming soon!
+    - [Send requests to APIs using SKL](https://github.com/comake/skl-examples/blob/main/events-unified-api/src/UsingSkl.ts)
