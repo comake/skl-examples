@@ -10,9 +10,9 @@ This repository contains examples of using Standard Knowledge Language via [Stan
     
     - [Send requests to APIs using existing SDKs](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingExistingSdks.ts)
 
-    - [Send requests to APIs using OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingOpenApiSpecs.ts)
+    - [Send requests to APIs using OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithOpenApiSpecs.ts)
 
-    - [Send requests to APIs using SKL](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingSkl.ts)
+    - [Send requests to APIs using SKL](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithSkl.ts)
 
   ## Contact
 
