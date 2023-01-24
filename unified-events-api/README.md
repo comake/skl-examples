@@ -32,11 +32,11 @@ To try out these examples, perform the following steps:
 
 3. Get credentials for the APIs
 
-    a. Ticketmaster: Go to [https://developer.ticketmaster.com/](https://developer.ticketmaster.com/) and create an account to get an api key
+    **Ticketmaster**: Go to [https://developer.ticketmaster.com/](https://developer.ticketmaster.com/) and create an account to get an api key
 
-    b. Seatgeek: Go to [https://seatgeek.com](https://seatgeek.com) and create an account, then go to [https://seatgeek.com/build](https://seatgeek.com/build) and click "Manage Apps" then register an app to get a client id (which gets used as an api key).
+    **Seatgeek**: Go to [https://seatgeek.com](https://seatgeek.com) and create an account, then go to [https://seatgeek.com/build](https://seatgeek.com/build) and click "Manage Apps" then register an app to get a `client_id` (which gets used as an api key).
 
-    c. Stubhub: Unfortunately they are controling API access right now so you have to fill out this form [https://signup.partnerize.com/signup/en/stubhub](https://signup.partnerize.com/signup/en/stubhub) to be accepted as an affiliate then have a Stubhub employee generate and send credentials to you. Once you get a `client_id` and `client_secret`, obtain an `accessToken` by sending a request to the Oauth2 client credentials token endpoint as specified in the [Stubhub authentication documentation](https://developer.stubhub.com/docs/authentication/application-only-authentication-flow#2-obtain-an-access-token). Note that you will have to refresh this access token because it expires.
+    **Stubhub**: Unfortunately they are controling API access right now so you have to fill out this form [https://signup.partnerize.com/signup/en/stubhub](https://signup.partnerize.com/signup/en/stubhub) to be accepted as an affiliate then have a Stubhub employee generate and send credentials to you. Once you get a `client_id` and `client_secret` from them, obtain an `accessToken` by sending a request to the Oauth2 client credentials token endpoint as specified in the [Stubhub authentication documentation](https://developer.stubhub.com/docs/authentication/application-only-authentication-flow#2-obtain-an-access-token). Note that you will have to refresh this access token because it expires. If you'd rather not go through this process, just comment out the code for Stubhub in any of the examples.
 
 4. Copy the contents of `.env.example` into a new file called `.env` and replace the example values with the credentials you obtained in the previous step.
 
@@ -50,14 +50,14 @@ To try out these examples, perform the following steps:
     npm run standard-sdk-with-skl
     ```
 
-This should log to your terminal a bunch of JSON. This JSON is the reseponse data we recieved from each API.
+Each of these should log a bunch of JSON to your terminal. This is the response data we recieved from each API.
 
 - In the first example using existing SDKs, it will log the unique response from each SDK.
-- In the second example using Standard SDK with OpenAPI specs, it will log an AxiosResponse object containing the data we received from each API.
+- In the second example using Standard SDK with OpenAPI specs, it will log an [`AxiosResponse`](https://github.com/axios/axios#response-schema) object containing the data we received from each API.
 - In the third example using Standard SDK with SKL, it will log the results from each API mapped to the [schema.org](https://schema.org) ontology. For brevity we did not map all the fields from the original API responses. 
 
-Copy and paste the responses into your favorite code editor to prettify it to check out the data! 
+Copy and paste the responses into your favorite code editor to prettify it & check out the data! 
 
 ## Next steps
 
-Now it's your turn. Experiment with SKL by modifying the RML mappings in the mappings.json file. If you're comfortable with RML and JSON-LD, or just feeling adventurous, try modifying this repo to map data from your API of choice!
+Now it's your turn. Experiment with SKL by modifying the RML mappings in the mappings.json file. If you're comfortable with RML and JSON-LD, or just feeling adventurous, try modifying this repo to map data from your API of choice! If you're stuck, have questions, or would like to consult with us on building with SKL, please reach out to us on [Discord](https://discord.gg/stvfSB8kpG?ref=https://github.com/comake/skl-examples).
