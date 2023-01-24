@@ -1,12 +1,12 @@
-# Using Standard SDK with SKL
+# Unified Events API examples
 
 This directory contains examples of building software that integrates with various event ticketing platforms like Ticketmaster, Stubhub, Seatgeek, etc. It contains three methods of performing the integration:
 
-1. [Using existing SDKs](https://github.com/comake/skl-examples/blob/main/events-unified-api/src/UsingExistingSdks.ts) - uses both official and non-official SDKs (whatever we could find on npm) to sends requests to each API using the unique methods and parameters of each integration's SDK.
+1. [Using existing SDKs](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingExistingSdks.ts) - uses both official and non-official SDKs (whatever we could find on npm) to sends requests to each API using the unique methods and parameters of each integration's SDK.
 
-2. [Using StandardSDK with OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/events-unified-api/src/UsingStandardSdkWithOpenApiSpecs.ts) - uses OpenAPI specs to create a single SDK with namespaced operations per integration that are automatically typed according to the OpenAPI spec.
+2. [Using StandardSDK with OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithOpenApiSpecs.ts) - uses OpenAPI specs to create a single SDK with namespaced operations per integration that are automatically typed according to the OpenAPI spec.
 
-3. [Using StandardSDK with SKL](https://github.com/comake/skl-examples/blob/main/events-unified-api/src/UsingStandardSdkWithSkl.ts) - uses SKL Schemas as abstraactions to get events from each API standardized in [schema.org/Event](https://schema.org/Event) format.
+3. [Using StandardSDK with SKL](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithSkl.ts) - uses SKL Schemas as abstraactions to get events from each API standardized in [schema.org/Event](https://schema.org/Event) format.
 
 ## Usage
 
@@ -18,7 +18,7 @@ To try out these examples, perform the following steps:
 
     ```shell
     git clone https://github.com/comake/skl-examples.git
-    cd skl-examples/events-unified-api/
+    cd skl-examples/unified-events-api/
     ```
 
 2. Install node modules and build the package
