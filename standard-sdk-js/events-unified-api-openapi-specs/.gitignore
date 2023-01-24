@@ -17,3 +17,5 @@ node_modules/
 .eslintcache
 
 dist
+
+.env
