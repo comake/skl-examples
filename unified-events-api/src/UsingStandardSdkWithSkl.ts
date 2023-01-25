@@ -1,3 +1,4 @@
+import type { Entity } from '@comake/standard-sdk-js';
 import { StandardSDK } from '@comake/standard-sdk-js';
 import * as dotenv from 'dotenv';
 import { combineSchemas } from './Util';
@@ -18,27 +19,38 @@ const env = {
 };
 
 (async function(): Promise<void> {
+  // Get contents of schema files, combine and frame them, replace stubbed env vars with real values
   const schemas = await combineSchemas(schemaFiles, env);
 
-  const standardSdk = StandardSDK.build({
+  // Build our Standard SDK
+  const standardSDK = StandardSDK.build({
     skqlOptions: { type: 'memory', schemas },
   });
 
-  const ticketmasterResponse = await standardSdk.skql.verb.getEvents({
+  // Get events from Ticketmaster using the `getEvents` Verb. Response holds a list of schema.org/Event entities
+  const ticketmasterResponse = await standardSDK.skql.verb.getEvents({
     account: 'https://example.com/data/TicketmasterAccount',
     city: 'New York',
   });
-  console.log(JSON.stringify(ticketmasterResponse['https://skl.standard.storage/records']));
 
-  const stubhubResponse = await standardSdk.skql.verb.getEvents({
+  // Get events from Stubhub using the `getEvents` Verb. Response holds a list of schema.org/Event entities
+  const stubhubResponse = await standardSDK.skql.verb.getEvents({
     account: 'https://example.com/data/StubhubAccount',
     city: 'New York',
   });
-  console.log(JSON.stringify(stubhubResponse['https://skl.standard.storage/records']));
 
-  const seatgeekResponse = await standardSdk.skql.verb.getEvents({
+  // Get events from SeatGeek using the `getEvents` Verb. Response holds a list of schema.org/Event entities
+  const seatgeekResponse = await standardSDK.skql.verb.getEvents({
     account: 'https://example.com/data/SeatgeekAccount',
     city: 'New York',
   });
-  console.log(JSON.stringify(seatgeekResponse['https://skl.standard.storage/records']));
+
+  // Get the schema.org event entities from the responses
+  const events = [
+    ...ticketmasterResponse['https://skl.standard.storage/records'] as Entity[],
+    ...stubhubResponse['https://skl.standard.storage/records'] as Entity[],
+    ...seatgeekResponse['https://skl.standard.storage/records'] as Entity[],
+  ];
+
+  console.log(events);
 })();

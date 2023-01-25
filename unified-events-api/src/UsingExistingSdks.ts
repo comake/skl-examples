@@ -6,18 +6,18 @@ import Ticketmaster from 'ticketmaster';
 dotenv.config();
 
 (async function(): Promise<void> {
-  // Ticketmaster
+  // Initialize Ticketmaster SDK
   const ticketmasterEventSDK = Ticketmaster(process.env.TICKETMASTER_APIKEY).discovery.v2.event;
+  // Send request with Ticketmaster SDK
   const ticketmasterResponse = await ticketmasterEventSDK.all({
     city: 'New York',
   });
-
   console.log(JSON.stringify(ticketmasterResponse));
 
-  // Seatgeek
+  // Initialize Seatgeek SDK
   const seatgeekSDK = new SeatGeek(process.env.SEATGEEK_APIKEY);
-  // Does not accept any parameters... so can't be used
+  // Send request with Seatgeek SDK
+  // Seatgeek SDK does not accept any parameters so this doesnt't actually solve our needs
   const seatgeekResponse = await seatgeekSDK.Event.allEvents().get();
-
   console.log(JSON.stringify(seatgeekResponse));
 })();
