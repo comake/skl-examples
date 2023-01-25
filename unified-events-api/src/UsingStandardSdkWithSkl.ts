@@ -13,9 +13,8 @@ const schemaFiles = [
 ];
 const env = {
   TICKETMASTER_APIKEY: process.env.TICKETMASTER_APIKEY!,
-  SEATGEEK_APIKEY: process.env.TICKETMASTER_APIKEY!,
-  STUBHUB_USERNAME: process.env.STUBHUB_USERNAME!,
-  STUBHUB_PASSWORD: process.env.STUBHUB_PASSWORD!,
+  STUBHUB_ACCESS_TOKEN: process.env.STUBHUB_ACCESS_TOKEN!,
+  SEATGEEK_APIKEY: process.env.SEATGEEK_APIKEY!,
 };
 
 (async function(): Promise<void> {

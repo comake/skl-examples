@@ -131,20 +131,6 @@
       ]
     },
     {
-      "@id": "https://skl.standard.storage/TokenPaginatedCollection",
-      "@type": ["owl:Class", "shacl:NodeShape"],
-      "label": "Token Paginated Collection",
-      "rdfs:subClassOf": "https://skl.standard.storage/Collection",
-      "shacl:closed": false,
-      "shacl:property": [
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://skl.standard.storage/nextPageToken",
-          "shacl:datatype": "xsd:string"
-        }
-      ]
-    },
-    {
       "@id": "https://skl.standard.storage/Collection",
       "@type": ["owl:Class", "shacl:NodeShape"],
       "label": "Token Paginated Collection",
