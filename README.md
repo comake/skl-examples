@@ -14,6 +14,10 @@ This repository contains examples of using Standard Knowledge Language via [Stan
 
     - [Send requests to APIs using SKL](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithSkl.ts)
 
+  - [Integrating files from file storage tools](https://github.com/comake/skl-examples/blob/main/unified-files-api)
+
+    - [Send requests to APIs using OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/unified-files-api/src/UsingStandardSdkWithOpenApiSpecs.ts)
+
   ## Contact
 
   If you're stuck, have questions, or would like to consult with us on building with SKL, please reach out to us on [Discord](https://discord.gg/stvfSB8kpG?ref=https://github.com/comake/skl-examples).

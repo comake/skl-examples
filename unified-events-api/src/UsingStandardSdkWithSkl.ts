@@ -1,3 +1,4 @@
+import type { Entity } from '@comake/standard-sdk-js';
 import { StandardSDK } from '@comake/standard-sdk-js';
 import * as dotenv from 'dotenv';
 import { combineSchemas } from './Util';
@@ -22,28 +23,34 @@ const env = {
   const schemas = await combineSchemas(schemaFiles, env);
 
   // Build our Standard SDK
-  const standardSdk = StandardSDK.build({
+  const standardSDK = StandardSDK.build({
     skqlOptions: { type: 'memory', schemas },
   });
 
   // Get events from Ticketmaster using the `getEvents` Verb. Response holds a list of schema.org/Event entities
-  const ticketmasterResponse = await standardSdk.skql.verb.getEvents({
+  const ticketmasterResponse = await standardSDK.skql.verb.getEvents({
     account: 'https://example.com/data/TicketmasterAccount',
     city: 'New York',
   });
-  console.log(JSON.stringify(ticketmasterResponse['https://skl.standard.storage/records']));
 
   // Get events from Stubhub using the `getEvents` Verb. Response holds a list of schema.org/Event entities
-  const stubhubResponse = await standardSdk.skql.verb.getEvents({
+  const stubhubResponse = await standardSDK.skql.verb.getEvents({
     account: 'https://example.com/data/StubhubAccount',
     city: 'New York',
   });
-  console.log(JSON.stringify(stubhubResponse['https://skl.standard.storage/records']));
 
   // Get events from SeatGeek using the `getEvents` Verb. Response holds a list of schema.org/Event entities
-  const seatgeekResponse = await standardSdk.skql.verb.getEvents({
+  const seatgeekResponse = await standardSDK.skql.verb.getEvents({
     account: 'https://example.com/data/SeatgeekAccount',
     city: 'New York',
   });
-  console.log(JSON.stringify(seatgeekResponse['https://skl.standard.storage/records']));
+
+  // Get the schema.org event entities from the responses
+  const events = [
+    ...ticketmasterResponse['https://skl.standard.storage/records'] as Entity[],
+    ...stubhubResponse['https://skl.standard.storage/records'] as Entity[],
+    ...seatgeekResponse['https://skl.standard.storage/records'] as Entity[],
+  ];
+
+  console.log(events);
 })();

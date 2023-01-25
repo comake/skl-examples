@@ -53,7 +53,7 @@ To try out these examples, perform the following steps:
 Each of these should log a bunch of JSON to your terminal. This is the response data we recieved from each API.
 
 - In the first example using existing SDKs, it will log the unique response from each SDK.
-- In the second example using Standard SDK with OpenAPI specs, it will log an [`AxiosResponse`](https://github.com/axios/axios#response-schema) object containing the data we received from each API.
+- In the second example using Standard SDK with OpenAPI specs, it will log the `data` field from an [`AxiosResponse`](https://github.com/axios/axios#response-schema) object containing the data we received from each API.
 - In the third example using Standard SDK with SKL, it will log the results from each API mapped to the [schema.org](https://schema.org) ontology. For brevity we did not map all the fields from the original API responses. 
 
 Copy and paste the responses into your favorite code editor to prettify it & check out the data! 
