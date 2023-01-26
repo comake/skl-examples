@@ -22,6 +22,10 @@
       "@id": "skl:operationMapping",
       "@type": "@id"
     },
+    "returnValueFrame": {
+      "@id": "skl:returnValueFrame",
+      "@type": "@json"
+    },
     "integration": { "@id": "skl:integration", "@type": "@id" },
     "verb": { "@id": "skl:verb", "@type": "@id" },
     "rml:referenceFormulation": { "@type": "@id" },
@@ -29,7 +33,8 @@
     "rr:predicate": { "@type": "@id" },
     "rr:object": { "@type": "@id" },
     "rr:subject": { "@type": "@id" },
-    "rr:class": { "@type": "@id" }
+    "rr:class": { "@type": "@id" },
+    "rr:termType": { "@type": "@id" }
   },
   "@graph": [
     {

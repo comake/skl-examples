@@ -24,94 +24,6 @@
   },
   "@graph": [
     {
-      "@id": "https://schema.org/Event",
-      "@type": ["owl:Class", "shacl:NodeShape"],
-      "label": "Event",
-      "rdfs:subClassOf": "https://skl.standard.storage/Noun",
-      "skos:definition": "An event happening at a certain time and location, such as a concert, lecture, or festival.",
-      "shacl:closed": false,
-      "shacl:property": [
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/name"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/identifier"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/url"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/description"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/email"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/telephone"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/doorTime"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/startDate"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/endDate"
-        },
-        {
-          "shacl:maxCount": 1,
-          "shacl:path": "https://schema.org/eventStatus"
-        }
-      ],
-      "skl:context": {
-        "deduplicationGroup": {
-          "@id": "https://skl.standard.storage/deduplicationGroup",
-          "@type": "@id"
-        },
-        "name": {
-          "@type": "http://www.w3.org/2001/XMLSchema#string",
-          "@id": "https://schema.org/name"
-        },
-        "identifier": {
-          "@type": "http://www.w3.org/2001/XMLSchema#string",
-          "@id": "https://schema.org/identifier"
-        },
-        "url": {
-          "@type": "http://www.w3.org/2001/XMLSchema#string",
-          "@id": "https://schema.org/url"
-        },
-        "description": {
-          "@type": "http://www.w3.org/2001/XMLSchema#string",
-          "@id": "https://schema.org/description"
-        },
-        "doorTime": {
-          "@type": "http://www.w3.org/2001/XMLSchema#string",
-          "@id": "https://schema.org/doorTime"
-        },
-        "startDate": {
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "@id": "https://schema.org/startDate"
-        },
-        "endDate": {
-          "@type": "http://www.w3.org/2001/XMLSchema#string",
-          "@id": "https://schema.org/endDate"
-        },
-        "status": {
-          "@type": "http://www.w3.org/2001/XMLSchema#string",
-          "@id": "https://schema.org/eventStatus"
-        }
-      }
-    },
-    {
       "@id": "https://skl.standard.storage/OpenApiDescription",
       "@type": ["owl:Class", "shacl:NodeShape"],
       "label": "OpenApiDescription",
@@ -129,23 +41,6 @@
           "shacl:maxCount": 1,
           "shacl:minount": 1,
           "shacl:path": "https://skl.standard.storage/openApiDescription"
-        }
-      ]
-    },
-    {
-      "@id": "https://skl.standard.storage/Collection",
-      "@type": ["owl:Class", "shacl:NodeShape"],
-      "label": "Token Paginated Collection",
-      "rdfs:subClassOf": "https://skl.standard.storage/Noun",
-      "shacl:closed": false,
-      "shacl:property": [
-        {
-          "shacl:nodeKind": { "@id": "shacl:BlankNodeOrIRI" },
-          "shacl:path": "https://skl.standard.storage/records"
-        },
-        {
-          "shacl:nodeKind": { "@id": "shacl:BlankNodeOrIRI" },
-          "shacl:path": "https://skl.standard.storage/linkedRecords"
         }
       ]
     },

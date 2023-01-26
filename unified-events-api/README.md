@@ -6,7 +6,7 @@ This directory contains examples of building software that integrates with vario
 
 2. [Using StandardSDK with OpenAPI specifications](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithOpenApiSpecs.ts) - uses OpenAPI specs to create a single SDK with namespaced operations per integration that are automatically typed according to the OpenAPI spec.
 
-3. [Using StandardSDK with SKL](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithSkl.ts) - uses SKL Schemas as abstraactions to get events from each API standardized in [schema.org/Event](https://schema.org/Event) format.
+3. [Using StandardSDK with SKL](https://github.com/comake/skl-examples/blob/main/unified-events-api/src/UsingStandardSdkWithSkl.ts) - uses SKL Schemas as abstractions to get events from each API standardized in [schema.org/Event](https://schema.org/Event) format.
 
 ## Usage
 

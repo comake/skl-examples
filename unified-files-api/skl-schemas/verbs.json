@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skl": "https://skl.standard.storage/",
+    "parametersContext": { "@id": "https://skl.standard.storage/parametersContext", "@type": "@json" },
+    "returnValueFrame": { "@id": "https://skl.standard.storage/returnValueFrame", "@type": "@json" },
+    "returnValue": { "@id": "https://skl.standard.storage/returnValue", "@type": "@id" },
+    "parameters": { "@id": "https://skl.standard.storage/parameters" }
+  },
+  "@graph": [
+    {
+      "@id": "https://skl.standard.storage/share",
+      "@type": "https://skl.standard.storage/Verb",
+      "rdfs:label": "share",
+      "parametersContext": {
+        "entity": {
+          "@id": "https://skl.standard.storage/entity",
+          "@type": "@id"
+        },
+        "account": {
+          "@id": "https://skl.standard.storage/account",
+          "@type": "@id"
+        }
+      },
+      "parameters": {
+        "@type": "shacl:NodeShape",
+        "shacl:targetClass": "https://skl.standard.storage/Parameters",
+        "shacl:property": [
+          {
+            "shacl:maxCount": 1,
+            "shacl:minCount": 1,
+            "shacl:name": "entity",
+            "shacl:path": "https://skl.standard.storage/entity"
+          },
+          {
+            "shacl:maxCount": 1,
+            "shacl:minCount": 1,
+            "shacl:name": "account",
+            "shacl:path": "https://skl.standard.storage/account"
+          }
+        ]
+      }
+    }
+  ]
+}
