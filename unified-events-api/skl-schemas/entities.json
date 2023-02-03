@@ -17,68 +17,68 @@
     "apiKey": { "@id": "skl:apiKey" },
     "accessToken": { "@id": "skl:accessToken" },
     "openApiDescription": { "@id": "skl:openApiDescription", "@type": "@json" },
-    "skl": "https://skl.standard.storage/",
+    "skl": "https://standardknowledge.com/ontologies/core/",
     "integration": { "@id": "skl:integration", "@type": "@id" }
   },
   "@graph": [
     {
-      "@id": "https://skl.standard.storage/integrations/Ticketmaster",
-      "@type": "https://skl.standard.storage/Integration",
+      "@id": "https://example.com/integrations/Ticketmaster",
+      "@type": "https://standardknowledge.com/ontologies/core/Integration",
       "description": "Buy and sell tickets online for concerts, sports, theater, family and other events near you from Ticketmaster.",
       "label": "Ticketmaster"
     },
     {
-      "@id": "https://skl.standard.storage/integrations/Stubhub",
-      "@type": "https://skl.standard.storage/Integration",
+      "@id": "https://example.com/integrations/Stubhub",
+      "@type": "https://standardknowledge.com/ontologies/core/Integration",
       "description": "Buy and sell sports tickets, concert tickets, theater tickets and Broadway tickets on StubHub!",
       "label": "Stubhub"
     },
     {
-      "@id": "https://skl.standard.storage/integrations/Seatgeek",
-      "@type": "https://skl.standard.storage/Integration",
+      "@id": "https://example.com/integrations/Seatgeek",
+      "@type": "https://standardknowledge.com/ontologies/core/Integration",
       "description": "SeatGeek is the Web's largest event ticket search engine. Discover events you love, search all ticket sites, see seat locations and get the best deals on tickets.",
       "label": "Seatgeek"
     },
     {
       "@id": "https://example.com/data/TicketmasterAccount",
-      "@type": "https://skl.standard.storage/Account",
-      "integration": "https://skl.standard.storage/integrations/Ticketmaster",
+      "@type": "https://standardknowledge.com/ontologies/core/Account",
+      "integration": "https://example.com/integrations/Ticketmaster",
       "label": "Ticketmaster Account"
     },
     {
       "@id": "https://example.com/data/StubhubAccount",
-      "@type": "https://skl.standard.storage/Account",
-      "integration": "https://skl.standard.storage/integrations/Stubhub",
+      "@type": "https://standardknowledge.com/ontologies/core/Account",
+      "integration": "https://example.com/integrations/Stubhub",
       "label": "Stubhub Account"
     },
     {
       "@id": "https://example.com/data/SeatgeekAccount",
-      "@type": "https://skl.standard.storage/Account",
-      "integration": "https://skl.standard.storage/integrations/Seatgeek",
+      "@type": "https://standardknowledge.com/ontologies/core/Account",
+      "integration": "https://example.com/integrations/Seatgeek",
       "label": "Seatgeek Account"
     },
     {
       "@id": "https://example.com/data/TicketmasterAccountSecurityCredentials",
-      "@type": "https://skl.standard.storage/SecurityCredentials",
+      "@type": "https://standardknowledge.com/ontologies/core/SecurityCredentials",
       "account": "https://example.com/data/TicketmasterAccount",
       "apiKey": "ENV_TICKETMASTER_APIKEY"
     },
     {
       "@id": "https://example.com/data/StubhubAccountSecurityCredentials",
-      "@type": "https://skl.standard.storage/SecurityCredentials",
+      "@type": "https://standardknowledge.com/ontologies/core/SecurityCredentials",
       "account": "https://example.com/data/StubhubAccount",
       "accessToken": "ENV_STUBHUB_ACCESS_TOKEN"
     },
     {
       "@id": "https://example.com/data/SeatgeekAccountSecurityCredentials",
-      "@type": "https://skl.standard.storage/SecurityCredentials",
+      "@type": "https://standardknowledge.com/ontologies/core/SecurityCredentials",
       "account": "https://example.com/data/SeatgeekAccount",
       "apiKey": "ENV_SEATGEEK_APIKEY"
     },
     {
       "@id": "https://example.com/data/TicketmasterOpenApiDescription",
-      "@type": "https://skl.standard.storage/OpenApiDescription",
-      "integration": "https://skl.standard.storage/integrations/Ticketmaster",
+      "@type": "https://standardknowledge.com/ontologies/core/OpenApiDescription",
+      "integration": "https://example.com/integrations/Ticketmaster",
       "openApiDescription": {
         "openapi": "3.0.0",
         "servers": [
@@ -3282,8 +3282,8 @@
     },
     {
       "@id": "https://example.com/data/StubhubOpenApiDescription",
-      "@type": "https://skl.standard.storage/OpenApiDescription",
-      "integration": "https://skl.standard.storage/integrations/Stubhub",
+      "@type": "https://standardknowledge.com/ontologies/core/OpenApiDescription",
+      "integration": "https://example.com/integrations/Stubhub",
       "openApiDescription": {
         "openapi": "3.0.0",
         "info": {
@@ -4874,8 +4874,8 @@
     },
     {
       "@id": "https://example.com/data/SeatgeekOpenApiDescription",
-      "@type": "https://skl.standard.storage/OpenApiDescription",
-      "integration": "https://skl.standard.storage/integrations/Seatgeek",
+      "@type": "https://standardknowledge.com/ontologies/core/OpenApiDescription",
+      "integration": "https://example.com/integrations/Seatgeek",
       "openApiDescription": {
         "openapi": "3.0.0",
         "info": {

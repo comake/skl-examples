@@ -22,43 +22,43 @@ const env = {
 
   // Build our Standard SDK
   const standardSDK = StandardSDK.build({
-    skqlOptions: { type: 'memory', schemas },
+    sklEngineOptions: { type: 'memory', schemas },
   });
 
   // Share a file in Google Drive
-  const googleDriveResponse = await standardSDK.skql.verb.share({
+  const googleDriveResponse = await standardSDK.skl.verb.share({
     account: 'https://example.com/data/GoogleDriveAccount',
     entity: {
-      '@type': 'http://skl.standard.storage/File',
+      '@type': 'http://standardknowledge.com/ontologies/core/File',
       '@id': 'http://example.com/data/abc123',
-      'http://skl.standard.storage/integration': { '@id': 'https://skl.standard.storage/integrations/GoogleDrive' },
-      'http://skl.standard.storage/sourceId': 'abc123'
+      'http://standardknowledge.com/ontologies/core/integration': { '@id': 'https://example.com/integrations/GoogleDrive' },
+      'http://standardknowledge.com/ontologies/core/sourceId': 'abc123'
     },
     permission: 'editor',
     emailAddress: 'adler@example.com'
   });
 
   // Share a file in Box
-  const boxResponse = await standardSDK.skql.verb.share({
+  const boxResponse = await standardSDK.skl.verb.share({
     account: 'https://example.com/data/BoxAccount',
     entity: {
-      '@type': 'http://skl.standard.storage/File',
+      '@type': 'http://standardknowledge.com/ontologies/core/File',
       '@id': 'http://example.com/data/abc123',
-      'http://skl.standard.storage/integration': { '@id': 'https://skl.standard.storage/integrations/Box' },
-      'http://skl.standard.storage/sourceId': 'abc123'
+      'http://standardknowledge.com/ontologies/core/integration': { '@id': 'https://example.com/integrations/Box' },
+      'http://standardknowledge.com/ontologies/core/sourceId': 'abc123'
     },
     permission: 'editor',
     emailAddress: 'adler@example.com'
   });
 
   // Share a file in Dropbox
-  const dropboxResponse = await standardSDK.skql.verb.share({
+  const dropboxResponse = await standardSDK.skl.verb.share({
     account: 'https://example.com/data/DropboxAccount',
     entity: {
-      '@type': 'http://skl.standard.storage/File',
+      '@type': 'http://standardknowledge.com/ontologies/core/File',
       '@id': 'http://example.com/data/abc123',
-      'http://skl.standard.storage/integration': { '@id': 'https://skl.standard.storage/integrations/Dropbox' },
-      'http://skl.standard.storage/sourceId': 'abc123'
+      'http://standardknowledge.com/ontologies/core/integration': { '@id': 'https://example.com/integrations/Dropbox' },
+      'http://standardknowledge.com/ontologies/core/sourceId': 'abc123'
     },
     permission: 'editor',
     emailAddress: 'adler@example.com'

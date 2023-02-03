@@ -9,10 +9,15 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rr": "http://www.w3.org/ns/r2rml#",
     "rml": "http://semweb.mmlab.be/ns/rml#",
-    "skl": "https://skl.standard.storage/",
+    "example": "https://example.com/",
+    "skl": "https://standardknowledge.com/ontologies/core/",
     "parameterMapping": {
       "@id": "skl:parameterMapping",
       "@type": "@id"
+    },
+    "parameterMappingFrame": {
+      "@id": "skl:parameterMappingFrame",
+      "@type": "@json"
     },
     "returnValueMapping": {
       "@id": "skl:returnValueMapping",
@@ -39,9 +44,9 @@
   "@graph": [
     {
       "@id": "https://example.com/data/sdwi3bh42u2v4",
-      "@type": "https://skl.standard.storage/VerbIntegrationMapping",
-      "integration": "https://skl.standard.storage/integrations/GoogleDrive",
-      "verb": "https://skl.standard.storage/share",
+      "@type": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
+      "integration": "https://example.com/integrations/GoogleDrive",
+      "verb": "https://example.com/share",
       "rdfs:label": "shareToGoogleDrive",
       "operationMapping": {
         "@type": "rr:TriplesMap",
@@ -61,7 +66,10 @@
             "rr:predicate": "skl:operationId"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
       },
       "parameterMapping": {
         "@type": "rr:TriplesMap",
@@ -76,10 +84,10 @@
             "@type": "rr:PredicateObjectMap",
             "rr:objectMap": {
               "@type": "rr:ObjectMap",
-              "rml:reference": "entity['http://skl.standard.storage/sourceId']",
+              "rml:reference": "entity['http://standardknowledge.com/ontologies/core/sourceId]",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:fileId"
+            "rr:predicate": "example:fileId"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -146,7 +154,7 @@
               },
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:role"
+            "rr:predicate": "example:role"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -155,7 +163,7 @@
               "rr:constant": "user",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:type"
+            "rr:predicate": "example:type"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -164,10 +172,21 @@
               "rml:reference": "emailAddress",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:emailAddress"
+            "rr:predicate": "example:emailAddress"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
+      },
+      "parameterMappingFrame": {
+        "@context": {
+          "fileId": "https://example.com/fileId",
+          "role": "https://example.com/role",
+          "type": "https://example.com/type",
+          "emailAddress": "https://example.com/emailAddress"
+        }
       },
       "returnValueMapping": {
         "@type": "rr:TriplesMap",
@@ -215,21 +234,23 @@
         ],
         "rr:subjectMap": {
           "@type": "rr:SubjectMap",
-          "rr:template": "https://skl.standard.storage/mappingSubject",
           "rr:termType": "rr:BlankNode"
         }
       },
       "returnValueFrame": {
         "@context": {
-          "success": { "@id": "https://skl.standard.storage/success" }
+          "success": { 
+            "@id": "https://standardknowledge.com/ontologies/core/success",
+            "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
         }
       }
     },
     {
       "@id": "https://example.com/data/235b34iu5",
-      "@type": "https://skl.standard.storage/VerbIntegrationMapping",
-      "integration": "https://skl.standard.storage/integrations/Dropbox",
-      "verb": "https://skl.standard.storage/share",
+      "@type": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
+      "integration": "https://example.com/integrations/Dropbox",
+      "verb": "https://example.com/share",
       "rdfs:label": "shareToDropbox",
       "operationMapping": {
         "@type": "rr:TriplesMap",
@@ -249,7 +270,10 @@
             "rr:predicate": "skl:operationId"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
       },
       "parameterMapping": {
         "@type": "rr:TriplesMap",
@@ -325,15 +349,15 @@
               },
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:access_level"
+            "rr:predicate": "example:access_level"
           },
           {
             "@type": "rr:PredicateObjectMap",
             "rr:objectMap": {
               "@type": "rr:ObjectMap",
-              "rml:reference": "entity['http://skl.standard.storage/sourceId']"           
+              "rml:reference": "entity['http://standardknowledge.com/ontologies/core/sourceId']"           
             },
-            "rr:predicate": "skl:file"
+            "rr:predicate": "example:file"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -355,7 +379,7 @@
                         "@type": "rr:ObjectMap",
                         "rml:reference": "emailAddress"           
                       },
-                      "rr:predicate": "skl:email"
+                      "rr:predicate": "example:email"
                     }
                   ],
                   "rr:subjectMap": {
@@ -381,7 +405,7 @@
                         "@type": "rr:ObjectMap",
                         "rr:constant": "email"           
                       },
-                      "rr:predicate": "skl:.tag"
+                      "rr:predicate": "example:.tag"
                     }
                   ],
                   "rr:subjectMap": {
@@ -391,10 +415,26 @@
                 }         
               }
             ],
-            "rr:predicate": "skl:members"
+            "rr:predicate": "example:members"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subject": "https://example.com/mappingSubject"
+      },
+      "parameterMappingFrame": {
+        "@context": {
+          "access_level": {
+            "@id": "https://example.com/access_level",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+          },
+          "file": "https://example.com/file",
+          "email": "https://example.com/email",
+          ".tag": "https://example.com/.tag",
+          "members": {
+            "@id": "https://example.com/members",
+            "@container": "@set"
+          }
+        },
+        "@id": "https://example.com/mappingSubject"
       },
       "returnValueMapping": {
         "@type": "rr:TriplesMap",
@@ -451,21 +491,21 @@
         ],
         "rr:subjectMap": {
           "@type": "rr:SubjectMap",
-          "rr:template": "https://skl.standard.storage/mappingSubject",
           "rr:termType": "rr:BlankNode"
         }
       },
       "returnValueFrame": {
-        "@context": {
-          "success": { "@id": "https://skl.standard.storage/success" }
+        "success": {
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+          "@id": "https://standardknowledge.com/ontologies/core/success"
         }
       }
     },
     {
       "@id": "https://example.com/data/dfbdf9b7dfb8",
-      "@type": "https://skl.standard.storage/VerbIntegrationMapping",
-      "integration": "https://skl.standard.storage/integrations/Box",
-      "verb": "https://skl.standard.storage/share",
+      "@type": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
+      "integration": "https://example.com/integrations/Box",
+      "verb": "https://example.com/share",
       "rdfs:label": "shareToBox",
       "operationMapping": {
         "@type": "rr:TriplesMap",
@@ -485,7 +525,10 @@
             "rr:predicate": "skl:operationId"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
       },
       "parameterMapping": {
         "@type": "rr:TriplesMap",
@@ -515,15 +558,15 @@
                       "@type": "rr:ObjectMap",
                       "rr:constant": "file"           
                     },
-                    "rr:predicate": "skl:type"
+                    "rr:predicate": "example:type"
                   },
                   {
                     "@type": "rr:PredicateObjectMap",
                     "rr:objectMap": {
                       "@type": "rr:ObjectMap",
-                      "rml:reference": "entity['http://skl.standard.storage/sourceId']"           
+                      "rml:reference": "entity['http://standardknowledge.com/ontologies/core/sourceId']"           
                     },
-                    "rr:predicate": "skl:id"
+                    "rr:predicate": "example:id"
                   }
                 ],
                 "rr:subjectMap": {
@@ -532,7 +575,7 @@
                 }
               }
             },
-            "rr:predicate": "skl:item"
+            "rr:predicate": "example:item"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -599,7 +642,7 @@
               },
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:role"
+            "rr:predicate": "example:role"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -620,7 +663,7 @@
                       "@type": "rr:ObjectMap",
                       "rr:constant": "user"           
                     },
-                    "rr:predicate": "skl:type"
+                    "rr:predicate": "example:type"
                   },
                   {
                     "@type": "rr:PredicateObjectMap",
@@ -628,7 +671,7 @@
                       "@type": "rr:ObjectMap",
                       "rml:reference": "emailAddress"           
                     },
-                    "rr:predicate": "skl:login"
+                    "rr:predicate": "example:login"
                   }
                 ],
                 "rr:subjectMap": {
@@ -637,10 +680,21 @@
                 }
               }
             },
-            "rr:predicate": "skl:accessible_by"
+            "rr:predicate": "example:accessible_by"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subject": "https://example.com/mappingSubject"
+      },
+      "parameterMappingFrame": {
+        "@context": {
+          "type": "https://example.com/type",
+          "id": "https://example.com/id",
+          "item": "https://example.com/item",
+          "role": "https://example.com/role",
+          "login": "https://example.com/login",
+          "accessible_by": "https://example.com/accessible_by"
+        },
+        "@id": "https://example.com/mappingSubject"
       },
       "returnValueMapping": {
         "@type": "rr:TriplesMap",
@@ -688,13 +742,13 @@
         ],
         "rr:subjectMap": {
           "@type": "rr:SubjectMap",
-          "rr:template": "https://skl.standard.storage/mappingSubject",
           "rr:termType": "rr:BlankNode"
         }
       },
       "returnValueFrame": {
-        "@context": {
-          "success": { "@id": "https://skl.standard.storage/success" }
+        "success": {
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+          "@id": "https://standardknowledge.com/ontologies/core/success"
         }
       }
     }

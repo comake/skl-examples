@@ -23,32 +23,32 @@ const env = {
 
   // Build our Standard SDK
   const standardSDK = StandardSDK.build({
-    skqlOptions: { type: 'memory', schemas },
+    sklEngineOptions: { type: 'memory', schemas },
   });
 
   // Get events from Ticketmaster using the `getEvents` Verb. Response holds a list of schema.org/Event entities
-  const ticketmasterResponse = await standardSDK.skql.verb.getEvents({
+  const ticketmasterResponse = await standardSDK.skl.verb.getEvents({
     account: 'https://example.com/data/TicketmasterAccount',
     city: 'New York',
   });
 
   // Get events from Stubhub using the `getEvents` Verb. Response holds a list of schema.org/Event entities
-  const stubhubResponse = await standardSDK.skql.verb.getEvents({
+  const stubhubResponse = await standardSDK.skl.verb.getEvents({
     account: 'https://example.com/data/StubhubAccount',
     city: 'New York',
   });
 
   // Get events from SeatGeek using the `getEvents` Verb. Response holds a list of schema.org/Event entities
-  const seatgeekResponse = await standardSDK.skql.verb.getEvents({
+  const seatgeekResponse = await standardSDK.skl.verb.getEvents({
     account: 'https://example.com/data/SeatgeekAccount',
     city: 'New York',
   });
 
   // Get the schema.org event entities from the responses
   const events = [
-    ...ticketmasterResponse['https://skl.standard.storage/records'] as Entity[],
-    ...stubhubResponse['https://skl.standard.storage/records'] as Entity[],
-    ...seatgeekResponse['https://skl.standard.storage/records'] as Entity[],
+    ...ticketmasterResponse['https://standardknowledge.com/ontologies/core/records'] as Entity[],
+    ...stubhubResponse['https://standardknowledge.com/ontologies/core/records'] as Entity[],
+    ...seatgeekResponse['https://standardknowledge.com/ontologies/core/records'] as Entity[],
   ];
 
   console.log(events);

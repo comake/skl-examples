@@ -9,10 +9,15 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rr": "http://www.w3.org/ns/r2rml#",
     "rml": "http://semweb.mmlab.be/ns/rml#",
-    "skl": "https://skl.standard.storage/",
+    "example": "https://example.com/",
+    "skl": "https://standardknowledge.com/ontologies/core/",
     "parameterMapping": {
       "@id": "skl:parameterMapping",
       "@type": "@id"
+    },
+    "parameterMappingFrame": {
+      "@id": "skl:parameterMappingFrame",
+      "@type": "@json"
     },
     "returnValueMapping": {
       "@id": "skl:returnValueMapping",
@@ -39,9 +44,9 @@
   "@graph": [
     {
       "@id": "https://example.com/data/sdwi3bh42u2v4",
-      "@type": "https://skl.standard.storage/VerbIntegrationMapping",
-      "integration": "https://skl.standard.storage/integrations/Ticketmaster",
-      "verb": "https://skl.standard.storage/getEvents",
+      "@type": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
+      "integration": "https://example.com/integrations/Ticketmaster",
+      "verb": "https://example.com/getEvents",
       "rdfs:label": "getEventsToTicketmaster",
       "operationMapping": {
         "@type": "rr:TriplesMap",
@@ -61,7 +66,10 @@
             "rr:predicate": "skl:operationId"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
       },
       "parameterMapping": {
         "@type": "rr:TriplesMap",
@@ -79,7 +87,7 @@
               "rml:reference": "page",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#integer"
             },
-            "rr:predicate": "skl:page"
+            "rr:predicate": "example:page"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -88,7 +96,7 @@
               "rml:reference": "pageSize",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#integer"
             },
-            "rr:predicate": "skl:size"
+            "rr:predicate": "example:size"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -96,7 +104,7 @@
               "@type": "rr:ObjectMap",
               "rml:reference": "city"
             },
-            "rr:predicate": "skl:city"
+            "rr:predicate": "example:city"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -105,7 +113,7 @@
               "rml:reference": "startAfterDate",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:startDateTime"
+            "rr:predicate": "example:startDateTime"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -114,10 +122,28 @@
               "rml:reference": "startBeforeDate",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:endDateTime"
+            "rr:predicate": "example:endDateTime"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
+      },
+      "parameterMappingFrame": {
+        "@context": {
+          "page": {
+            "@type": "http://www.w3.org/2001/XMLSchema#integer",
+            "@id": "https://example.com/page"
+          },
+          "size": {
+            "@type": "http://www.w3.org/2001/XMLSchema#integer",
+            "@id": "https://example.com/size"
+          },
+          "city": "https://example.com/city",
+          "startDateTime": "https://example.com/startDateTime",
+          "endDateTime": "https://example.com/endDateTime"   
+        }
       },
       "returnValueMapping": {
         "@type": "rr:TriplesMap",
@@ -377,7 +403,6 @@
                     "rr:predicate": "schema:eventStatus"
                   }
                 ],
-                
                 "rr:subjectMap": {
                   "@type": "rr:SubjectMap",
                   "rr:template": "https://example.com/data/ticketmaster/events/{id}",
@@ -390,19 +415,19 @@
         ],
         "rr:subjectMap": {
           "@type": "rr:SubjectMap",
-          "rr:template": "https://skl.standard.storage/mappingSubject",
-          "rr:class": "https://skl.standard.storage/Collection"
+          "rr:termType": "rr:BlankNode",
+          "rr:class": "https://standardknowledge.com/ontologies/core/Collection"
         }
       },
       "returnValueFrame": {
-        "@type": "https://skl.standard.storage/Collection"
+        "@type": "https://standardknowledge.com/ontologies/core/Collection"
       }
     },
     {
-      "@id": "https://skl.standard.storage/data/232kuyvu4y3",
-      "@type": "https://skl.standard.storage/VerbIntegrationMapping",
-      "integration": "https://skl.standard.storage/integrations/Stubhub",
-      "verb": "https://skl.standard.storage/getEvents",
+      "@id": "https://example.com/data/232kuyvu4y3",
+      "@type": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
+      "integration": "https://example.com/integrations/Stubhub",
+      "verb": "https://example.com/getEvents",
       "name": "getEventsToStubhub",
       "operationMapping": {
         "@type": "rr:TriplesMap",
@@ -422,7 +447,10 @@
             "rr:predicate": "skl:operationId"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
       },
       "parameterMapping": {
         "@type": "rr:TriplesMap",
@@ -440,7 +468,7 @@
               "rml:reference": "page",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:page"
+            "rr:predicate": "example:page"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -449,7 +477,7 @@
               "rml:reference": "pageSize",
               "rr:datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
-            "rr:predicate": "skl:page_size"
+            "rr:predicate": "example:page_size"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -457,7 +485,7 @@
               "@type": "rr:ObjectMap",
               "rml:reference": "city"           
             },
-            "rr:predicate": "skl:q"
+            "rr:predicate": "example:q"
           },
           {
             "@type": "rr:PredicateObjectMap",
@@ -465,10 +493,21 @@
               "@type": "rr:ObjectMap",
               "rr:constant": "start_date"           
             },
-            "rr:predicate": "skl:sort"
+            "rr:predicate": "example:sort"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
+      },
+      "parameterMappingFrame": {
+        "@context": {
+          "page": "https://example.com/page",
+          "page_size": "https://example.com/page_size",
+          "q": "https://example.com/q",
+          "sort": "https://example.com/sort"
+        }
       },
       "returnValueMapping": {
         "@type": "rr:TriplesMap",
@@ -799,19 +838,19 @@
         ],
         "rr:subjectMap": {
           "@type": "rr:SubjectMap",
-          "rr:template": "https://skl.standard.storage/mappingSubject",
-          "rr:class": "https://skl.standard.storage/Collection"
+          "rr:termType": "rr:BlankNode",
+          "rr:class": "https://standardknowledge.com/ontologies/core/Collection"
         }
       },
       "returnValueFrame": {
-        "@type": "https://skl.standard.storage/Collection"
+        "@type": "https://standardknowledge.com/ontologies/core/Collection"
       }
     },
     {
-      "@id": "https://skl.standard.storage/data/84ib64iu3",
-      "@type": "https://skl.standard.storage/VerbIntegrationMapping",
-      "integration": "https://skl.standard.storage/integrations/Seatgeek",
-      "verb": "https://skl.standard.storage/getEvents",
+      "@id": "https://example.com/data/84ib64iu3",
+      "@type": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
+      "integration": "https://example.com/integrations/Seatgeek",
+      "verb": "https://example.com/getEvents",
       "name": "getEventsToSeatGeek",
       "operationMapping": {
         "@type": "rr:TriplesMap",
@@ -831,7 +870,10 @@
             "rr:predicate": "skl:operationId"
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
       },
       "parameterMapping": {
         "@type": "rr:TriplesMap",
@@ -887,7 +929,19 @@
             }
           }
         ],
-        "rr:subject": "https://skl.standard.storage/mappingSubject"
+        "rr:subjectMap": {
+          "@type": "rr:SubjectMap",
+          "rr:termType": "rr:BlankNode"
+        }
+      },
+      "parameterMappingFrame": {
+        "@context": {
+          "page": "https://example.com/page",
+          "per_page": "https://example.com/per_page",
+          "q": "https://example.com/q",
+          "startDateTime": "https://example.com/startDateTime",
+          "endDateTime": "https://example.com/endDateTime"
+        }
       },
       "returnValueMapping": {
         "@type": "rr:TriplesMap",
@@ -1042,12 +1096,12 @@
         },
         "rr:subjectMap": {
           "@type": "rr:SubjectMap",
-          "rr:template": "https://skl.standard.storage/mappingSubject",
-          "rr:class": "https://skl.standard.storage/Collection"
+          "rr:termType": "rr:BlankNode",
+          "rr:class": "https://standardknowledge.com/ontologies/core/Collection"
         }
       },
       "returnValueFrame": {
-        "@type": "https://skl.standard.storage/Collection"
+        "@type": "https://standardknowledge.com/ontologies/core/Collection"
       }
     }
   ]

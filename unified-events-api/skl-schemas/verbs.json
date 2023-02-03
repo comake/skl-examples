@@ -4,88 +4,88 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "skl": "https://skl.standard.storage/",
-    "parametersContext": { "@id": "https://skl.standard.storage/parametersContext", "@type": "@json" },
-    "returnValueFrame": { "@id": "https://skl.standard.storage/returnValueFrame", "@type": "@json" },
-    "returnValue": { "@id": "https://skl.standard.storage/returnValue", "@type": "@id" },
-    "parameters": { "@id": "https://skl.standard.storage/parameters" }
+    "skl": "https://standardknowledge.com/ontologies/core/",
+    "parametersContext": { "@id": "skl:parametersContext", "@type": "@json" },
+    "returnValueFrame": { "@id": "skl:returnValueFrame", "@type": "@json" },
+    "returnValue": { "@id": "skl:returnValue", "@type": "@id" },
+    "parameters": { "@id": "skl:parameters" }
   },
   "@graph": [
     {
-      "@id": "https://skl.standard.storage/getEvents",
-      "@type": "https://skl.standard.storage/Verb",
+      "@id": "https://example.com/getEvents",
+      "@type": "https://standardknowledge.com/ontologies/core/Verb",
       "rdfs:label": "getEvents",
       "parametersContext": {
         "city": {
-          "@id": "https://skl.standard.storage/city",
+          "@id": "https://example.com/city",
           "@type": "http://www.w3.org/2001/XMLSchema#string"
         },
         "startAfterdate": {
-          "@id": "https://skl.standard.storage/date",
+          "@id": "https://example.com/date",
           "@type": "http://www.w3.org/2001/XMLSchema#string"
         },
         "startBeforedate": {
-          "@id": "https://skl.standard.storage/date",
+          "@id": "https://example.com/date",
           "@type": "http://www.w3.org/2001/XMLSchema#string"
         },
         "page": {
-          "@id": "https://skl.standard.storage/page",
+          "@id": "https://example.com/page",
           "@type": "http://www.w3.org/2001/XMLSchema#integer"
         },
         "pageSize": {
-          "@id": "https://skl.standard.storage/pageSize",
+          "@id": "https://example.com/pageSize",
           "@type": "http://www.w3.org/2001/XMLSchema#integer"
         },
         "account": {
-          "@id": "https://skl.standard.storage/account",
+          "@id": "https://example.com/account",
           "@type": "@id"
         }
       },
       "parameters": {
         "@type": "shacl:NodeShape",
-        "shacl:targetClass": "https://skl.standard.storage/Parameters",
+        "shacl:targetClass": "https://standardknowledge.com/ontologies/core/Parameters",
         "shacl:property": [
           {
             "shacl:datatype": "xsd:string",
             "shacl:maxCount": 1,
             "shacl:name": "city",
-            "shacl:path": "https://skl.standard.storage/city"
+            "shacl:path": "https://example.com/city"
           },
           {
             "shacl:datatype": "xsd:string",
             "shacl:maxCount": 1,
             "shacl:name": "startAfterDate",
-            "shacl:path": "https://skl.standard.storage/startAfterDate"
+            "shacl:path": "https://example.com/startAfterDate"
           },
           {
             "shacl:datatype": "xsd:string",
             "shacl:maxCount": 1,
             "shacl:name": "startBeforeDate",
-            "shacl:path": "https://skl.standard.storage/startBeforeDate"
+            "shacl:path": "https://example.com/startBeforeDate"
           },
           {
             "shacl:datatype": "xsd:integer",
             "shacl:maxCount": 1,
             "shacl:name": "page",
-            "shacl:path": "https://skl.standard.storage/page"
+            "shacl:path": "https://example.com/page"
           },
           {
             "shacl:datatype": "xsd:integer",
             "shacl:maxCount": 1,
             "shacl:name": "pageSize",
-            "shacl:path": "https://skl.standard.storage/pageSize"
+            "shacl:path": "https://example.com/pageSize"
           },
           {
             "shacl:maxCount": 1,
             "shacl:minCount": 1,
             "shacl:name": "account",
-            "shacl:path": "https://skl.standard.storage/account"
+            "shacl:path": "https://example.com/account"
           }
         ]
       },
-      "returnValue": "https://skl.standard.storage/Collection",
+      "returnValue": "https://standardknowledge.com/ontologies/core/Collection",
       "returnValueFrame": {
-        "@type": "https://skl.standard.storage/Collection"
+        "@type": "https://standardknowledge.com/ontologies/core/Collection"
       }
     }
   ]
